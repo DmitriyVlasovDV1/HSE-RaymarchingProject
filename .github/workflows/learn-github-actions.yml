@@ -19,18 +19,18 @@ jobs:
           mkdir debug
       - name: Create Makefiles
         run: |
-          cd build/release
-          cmake ../..
-          cd ../debug
-          cmake ../..
+          cd build/debug
+          cmake -DCMAKE_BUILD_TYPE=Debug ../..
+          cd ../release
+          cmake -DCMAKE_BUILD_TYPE=Release ../..
       - name: Compile debug with cmake
         run: |
           cd build/debug
-          cmake -DCMAKE_BUILD_TYPE=Debug --build .
+          cmake --build .
       - name: Compile release with cmake
         run: |
           cd build/release
-          cmake -DCMAKE_BUILD_TYPE=Release --build .
+          cmake --build .
       - name: Run tests
         run: bash tests/run_tests.sh ../build/release
 
