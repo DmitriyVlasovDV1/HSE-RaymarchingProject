@@ -20,7 +20,8 @@ file(GLOB SOURCE_FILES
         src/render/src/figures/figure_transformation.cpp
         src/render/src/figures/figure_material.cpp
         src/Scenes/SK4/test_unit.cpp
-        src/Scenes/DV1/rm_shd_unit.cpp)
+        src/Scenes/DV1/rm_shd_unit.cpp
+        src/scenes/DV1/rm_shd_unit.cpp)
 
 file(GLOB HEADER_FILES
         src/utilities/math/math.hpp
@@ -79,7 +80,7 @@ add_compile_definitions(GLEW_STATIC)
 #add_link_options(-fsanitize=address)
 #add_link_options(-fsanitize=undefined)
 
-add_executable(${PROJECT_NAME} ${SOURCE_FILES} src/scenes/DV1/rm_shd_unit.cpp tests/math/vectors_test.cpp)
+add_executable(${PROJECT_NAME} ${SOURCE_FILES} )
 
 
 # Build tests

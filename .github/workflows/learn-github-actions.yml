@@ -27,6 +27,6 @@ jobs:
           cd build/debug
           cmake --build .
       - name: Run tests
-        run: bash tests/run_tests.sh ../build/release
+        run: bash tests/run_tests.sh build/debug
 
 
