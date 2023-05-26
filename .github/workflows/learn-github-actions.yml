@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   run-compile:
-    runs-on: ubuntu-latest
+    runs-on: windows
     steps:
       - name: Download solution
         uses: actions/checkout@v3
