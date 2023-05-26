@@ -22,7 +22,7 @@ jobs:
       - run: |
           brew update
           brew install glew
-        if: matrix.os
+        if: matrix.os == 'macos-latest'
       - name: Setup build directories
         run: |
           mkdir build
