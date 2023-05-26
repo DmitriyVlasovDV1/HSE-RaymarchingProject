@@ -2,12 +2,24 @@ name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  check-bats-version:
+  run-compile:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      - name: Download solution
+        uses: actions/checkout@v3
+
+      - name: Print cmake version
+        run: cmake --version
+
+      - name: Print compiler version
+        run: ${{matrix.compiler.command}} ${{matrix.compiler.version-flags}}
+
+      - name: CMake compilation
+        run: mkdir build && cd build
+        run: mkdir release && cd release
+        run: cmake ../..
+        run: cmake -DCMAKE_BUILD_TYPE=Debug --build .
+        run: cd ../..
+        run: bash tests/run_tests.sh build/release
+
+
