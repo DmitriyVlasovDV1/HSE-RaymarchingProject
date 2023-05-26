@@ -11,8 +11,13 @@ jobs:
         run: cmake --version
       - name: Print compiler version
         run: ${{matrix.compiler.command}} ${{matrix.compiler.version-flags}}
+      - run: pwd
+      - run: ls
       - run: mkdir build && cd build
+      - run: ls
       - run: mkdir release && cd release
+      - run: pwd
+      - run: pwd ../..
       - run: cmake ../..
       - name: Compile with cmake
         run: cmake -DCMAKE_BUILD_TYPE=Debug --build .
