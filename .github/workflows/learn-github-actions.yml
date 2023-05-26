@@ -11,18 +11,27 @@ jobs:
         run: cmake --version
       - name: Print compiler version
         run: ${{matrix.compiler.command}} ${{matrix.compiler.version-flags}}
-      - run: pwd
-      - run: ls
-      - run: mkdir build && cd build
-      - run: ls
-      - run: mkdir release && cd release
-      - run: pwd
-      - run: pwd ../..
-      - run: cmake ../..
-      - name: Compile with cmake
-        run: cmake -DCMAKE_BUILD_TYPE=Debug --build .
-      - run: cd ../..
+      - name: Setup build directories
+        run: |
+          mkdir build
+          cd build 
+          mkdir release
+          mkdir debug
+      - name: Create Makefiles
+        run: |
+          cd build/release
+          cmake ../..
+          cd ../debug
+          cmake ../..
+      - name: Compile debug with cmake
+        run: |
+          cd build/debug
+          cmake -DCMAKE_BUILD_TYPE=Debug --build .
+      - name: Compile release with cmake
+        run: |
+          cd build/release
+          cmake -DCMAKE_BUILD_TYPE=Release --build .
       - name: Run tests
-        run: bash tests/run_tests.sh build/release
+        run: bash tests/run_tests.sh ../build/release
 
 
