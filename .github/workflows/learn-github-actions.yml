@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   run-compile:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Download solution
         uses: actions/checkout@v3
@@ -11,6 +11,7 @@ jobs:
         run: cmake --version
       - name: Print compiler version
         run: ${{matrix.compiler.command}} ${{matrix.compiler.version-flags}}
+      - run: sudo apt install mesa-utils libglu1-mesa-dev freeglut3-dev mesa-common-dev && sudo apt install libglew-dev libglfw3 libglfw3-dev
       - name: Setup build directories
         run: |
           mkdir build
@@ -20,16 +21,10 @@ jobs:
       - name: Create Makefiles
         run: |
           cd build/debug
-          cmake -DCMAKE_BUILD_TYPE=Debug ../..
-          cd ../release
-          cmake -DCMAKE_BUILD_TYPE=Release ../..
+          cmake ../..
       - name: Compile debug with cmake
         run: |
           cd build/debug
-          cmake --build .
-      - name: Compile release with cmake
-        run: |
-          cd build/release
           cmake --build .
       - name: Run tests
         run: bash tests/run_tests.sh ../build/release
