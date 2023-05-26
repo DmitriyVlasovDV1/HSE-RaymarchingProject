@@ -11,7 +11,7 @@ jobs:
         run: cmake --version
       - name: Print compiler version
         run: ${{matrix.compiler.command}} ${{matrix.compiler.version-flags}}
-      - run: sudo apt install mesa-utils libglu1-mesa-dev freeglut3-dev mesa-common-dev && sudo apt install libglew-dev libglfw3 libglfw3-dev
+      - run: sudo apt update && sudo apt install mesa-utils libglu1-mesa-dev freeglut3-dev mesa-common-dev && sudo apt install libglew-dev libglfw3 libglfw3-dev
       - name: Setup build directories
         run: |
           mkdir build
