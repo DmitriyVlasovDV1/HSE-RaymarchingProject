@@ -5,7 +5,7 @@ jobs:
   run-compile:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest] 
+        os: [ubuntu-latest, macos-arm64] 
     runs-on: ${{matrix.os}}
     steps:
       - name: Download solution
@@ -36,7 +36,7 @@ jobs:
       - name: Compile debug with cmake
         run: |
           cd build/debug
-          cmake --build .
+          cmake --build -Wstring-compare .
       - name: Run tests
         run: bash tests/run_tests.sh build/debug
 
