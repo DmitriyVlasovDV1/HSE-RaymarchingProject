@@ -36,7 +36,7 @@ jobs:
       - name: Compile debug with cmake
         run: |
           cd build/debug
-          cmake --build -Wstring-compare .
+          cmake --build .
       - name: Run tests
         run: bash tests/run_tests.sh build/debug
 
