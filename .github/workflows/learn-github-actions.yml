@@ -8,7 +8,6 @@ jobs:
         os: [windows-latest, ubuntu-latest]
     runs-on: ${{matrix.os}}
     steps:
-      if: ${{matrix.os == ubuntu-latest}}
       - name: Download solution
         uses: actions/checkout@v3
       - name: Print cmake version
