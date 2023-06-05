@@ -51,7 +51,6 @@ if (APPLE)
     message(STATUS ">>> Apple detected")
     find_package(GLEW REQUIRED)
     link_directories(bin/GLFW/macos)
-	set(CMAKE_OSX_ARCHITECTURES x86)
     set(GLFW_LIBRARIES libglfw.3.dylib libglfw3.a)
     set(GLEW_LIBRARIES GLEW::GLEW)
 
