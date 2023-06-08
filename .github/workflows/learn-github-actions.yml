@@ -2,7 +2,7 @@ name: learn-github-actions
 run-name: Compile with cmake and run doctest tests
 on: [push]
 jobs:
-  run-compile:
+  build-on-different-os:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
@@ -27,17 +27,19 @@ jobs:
         run: |
           mkdir build
           cd build 
-          mkdir release
-          mkdir debug
       - name: Create Makefiles
         run: |
-          cd build/debug
+          cd build
           cmake ../..
-      - name: Compile debug with cmake
+      - name: Build with make
         run: |
-          cd build/debug
-          cmake --build .
+          cd build
+          make .
+
+  run-tests:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Download solution
+        uses: actions/checkout@v3
       - name: Run tests
-        run: bash tests/run_tests.sh build/debug
-
-
+        run: bash tests/run_tests.sh build
