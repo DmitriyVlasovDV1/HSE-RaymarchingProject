@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/gamma.dir/gamma.c.o -o gamma  -Wl,-rpath,/home/dvlasov/Projects/glfw/build/src ../src/libglfw.so.3.4 -lm 

@@ -56,8 +56,8 @@ if (APPLE)
 
 elseif (MSVC OR MSYS OR MINGW)
     message(STATUS ">>> Windows detected")
-    link_directories(bin/GLFW/windows)
-    set(GLFW_LIBRARIES libglfw3.a)
+    add_subdirectory(bin/glfw)
+    set(GLFW_LIBRARIES glfw)
     link_directories(bin/GLEW/windows)
     set(GLEW_LIBRARIES glew32s glew32 opengl32)
 

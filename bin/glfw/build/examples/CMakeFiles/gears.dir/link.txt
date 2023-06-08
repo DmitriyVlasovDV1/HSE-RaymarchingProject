@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/gears.dir/gears.c.o -o gears  -Wl,-rpath,/home/dvlasov/Projects/glfw/build/src ../src/libglfw.so.3.4 -lm 

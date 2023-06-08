@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/icon.dir/icon.c.o -o icon  -Wl,-rpath,/home/dvlasov/Projects/glfw/build/src ../src/libglfw.so.3.4 -lm 

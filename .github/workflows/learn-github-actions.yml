@@ -5,7 +5,7 @@ jobs:
   run-compile:
     strategy:
       matrix:
-        os: [macos-latest]
+        os: [ubuntu-latest, windows-latest]
     runs-on: ${{matrix.os}}
     steps:
       - name: Download solution

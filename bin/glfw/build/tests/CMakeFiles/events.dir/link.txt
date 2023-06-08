@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/events.dir/events.c.o CMakeFiles/events.dir/__/deps/getopt.c.o -o events  -Wl,-rpath,/home/dvlasov/Projects/glfw/build/src ../src/libglfw.so.3.4 -lm 

@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/windows.dir/windows.c.o -o windows  -Wl,-rpath,/home/dvlasov/Projects/glfw/build/src ../src/libglfw.so.3.4 -lm 

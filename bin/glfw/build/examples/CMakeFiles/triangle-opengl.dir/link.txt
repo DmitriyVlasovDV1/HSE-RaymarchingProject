@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/triangle-opengl.dir/triangle-opengl.c.o -o triangle-opengl  -Wl,-rpath,/home/dvlasov/Projects/glfw/build/src ../src/libglfw.so.3.4 -lm 

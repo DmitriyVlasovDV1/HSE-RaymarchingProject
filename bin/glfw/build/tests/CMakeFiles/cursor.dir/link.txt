@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/cursor.dir/cursor.c.o -o cursor  -Wl,-rpath,/home/dvlasov/Projects/glfw/build/src ../src/libglfw.so.3.4 -lm 

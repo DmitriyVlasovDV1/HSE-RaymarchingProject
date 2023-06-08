@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/title.dir/title.c.o -o title  -Wl,-rpath,/home/dvlasov/Projects/glfw/build/src ../src/libglfw.so.3.4 -lm 

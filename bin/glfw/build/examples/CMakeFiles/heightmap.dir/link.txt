@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/heightmap.dir/heightmap.c.o -o heightmap  -Wl,-rpath,/home/dvlasov/Projects/glfw/build/src ../src/libglfw.so.3.4 -lm 
