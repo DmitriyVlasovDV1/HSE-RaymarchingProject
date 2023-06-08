@@ -1,5 +1,5 @@
 name: learn-github-actions
-run-name: Compile with cmake and run doctest tests
+run-name: Build and tests
 on: [push]
 jobs:
   build:
