@@ -2,7 +2,7 @@ name: learn-github-actions
 run-name: Compile with cmake and run doctest tests
 on: [push]
 jobs:
-  build-on-different-os:
+  build:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
@@ -30,13 +30,14 @@ jobs:
       - name: Create Makefiles
         run: |
           cd build
-          cmake ../..
+          cmake ..
       - name: Build with make
         run: |
           cd build
           make .
 
-  run-tests:
+  tests:
+    needs: build
     runs-on: 'ubuntu-latest'
     steps:
       - name: Download solution
