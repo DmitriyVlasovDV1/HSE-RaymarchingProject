@@ -1,4 +1,4 @@
-name: learn-github-actions
+name: hse-project
 run-name: Build and tests
 on: [push]
 jobs:
