@@ -62,7 +62,5 @@ jobs:
         run: |
           cd build
           cmake --build .
-      - name: Download solution
-        uses: actions/checkout@v3
       - name: Run tests
         run: bash tests/run_tests.sh build
