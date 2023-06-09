@@ -19,8 +19,7 @@ file(GLOB SOURCE_FILES
         src/render/src/figures/figure_render.cpp
         src/render/src/figures/figure_transformation.cpp
         src/render/src/figures/figure_material.cpp
-        src/Scenes/SK4/test_unit.cpp
-        src/Scenes/DV1/rm_shd_unit.cpp
+        src/scenes/SK4/test_unit.cpp
         src/scenes/DV1/rm_shd_unit.cpp)
 
 file(GLOB HEADER_FILES
@@ -42,8 +41,8 @@ file(GLOB HEADER_FILES
         src/render/src/figures/figure_render.hpp
         src/render/src/figures/figure_transformation.hpp
         src/render/src/figures/figure_material.hpp
-        src/Scenes/SK4/test_unit.hpp
-        src/Scenes/DV1/rm_shd_unit.hpp)
+        src/scenes/SK4/test_unit.hpp
+        src/scenes/DV1/rm_shd_unit.hpp)
 
 find_package(OpenGL REQUIRED)
 
