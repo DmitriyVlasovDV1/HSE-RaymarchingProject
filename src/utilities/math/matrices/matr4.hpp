@@ -11,7 +11,7 @@ public:
     float matrix[4][4];
 
     // Class default constructor
-    explicit matr4() : matrix{{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}} {
+    explicit matr4() : matrix{{1, 0, 1, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}} {
     }
 
     /* Class constructor.
